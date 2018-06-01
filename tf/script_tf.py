@@ -33,7 +33,7 @@ def load_data_and_vocab(file_path):
     for line in all_lines:
         for character in line:
             all_chars.append(character)
-    all_chars = list(set(all_chars))
+    all_chars = sorted(list(set(all_chars)))
     all_chars.append('UNK')  # to take care of characters not seen in training data
 
     data_size, vocab_size = training_data['text'].shape[0], len(all_chars)
